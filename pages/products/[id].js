@@ -30,8 +30,12 @@ const ProductDetails = (props) => {
                 <meta name="description" content="" />
             </Head>
             <h1> {props.product.title}</h1>
-            <Image src={props.product.image} width={100} height={100} />
-            <img src={props.product.image} width={100} height={100} alt="" />
+            <Image
+                alt={props.product.image}
+                src={props.product.image}
+                width={100}
+                height={100}
+            />
         </div>
     );
 };
