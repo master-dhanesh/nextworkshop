@@ -6,7 +6,7 @@ const dbpath = () => {
 };
 
 const datareader = () => {
-    const strdata = fs.readFileSync(dbpath());
+    const strdata = fs.readFile(dbpath());
     return JSON.parse(strdata);
 };
 
