@@ -1,6 +1,6 @@
 import { connectToDatabase } from "@/lib/db";
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers/credientials";
+import Providers from "next-auth/providers/credentials";
 
 export default NextAuth({
     session: {

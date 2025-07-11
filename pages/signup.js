@@ -1,4 +1,17 @@
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
 const Signup = () => {
+    const router = useRouter();
+    const { status } = useSession();
+
+    useEffect(() => {
+        if (status == "authenticated") {
+            window.location.href = "/profile";
+        }
+    }, [router, status]);
+
     const SignupHandler = async () => {
         const newUser = {
             email: "johndoe@gmail.com",
@@ -14,6 +27,7 @@ const Signup = () => {
         const result = await response.json();
         if (response.ok) {
             console.log("success");
+            router.push("/signin");
         } else {
             console.log(result);
         }
